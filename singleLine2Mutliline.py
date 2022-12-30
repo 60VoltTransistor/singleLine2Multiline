@@ -1,17 +1,10 @@
-dataString = str(input("Enter string to be converted...\n"))
-print('\n')
-dataList = dataString.split()
-tmpString = ""
-tmp = 1
-splitCount = 10
+import textwrap 
 
-for i in range(len(dataList)):
-    tmpString += dataList[i]
-    if (tmp % splitCount) == 0:
-        tmpString += '\n'
-        """ print(tmpString) """
-    else:
-        tmpString += ' '
-    tmp += 1
+dataString = str(input("Enter string to be converted...\n"))
+
+print('')
+charWidth = 50
+wapper = textwrap.TextWrapper(width=charWidth)
+tmpString = wapper.fill(text=dataString)
 
 print(tmpString)
